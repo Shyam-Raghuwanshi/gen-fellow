@@ -4,6 +4,7 @@
 node_modules
 .pnp
 .pnp.js
+.fastembed_cache
 
 # Local env files
 .env

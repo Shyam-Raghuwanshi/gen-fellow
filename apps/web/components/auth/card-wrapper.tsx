@@ -11,13 +11,13 @@ import { Social } from "@/components/auth/social";
 import { BackButton } from "@/components/auth/back-button";
 
 interface CardWrapperProps {
-  headerText: string;
+  headerText?: string;
   children: React.ReactNode;
   headerLabel?: string;
   backButtonLabel: string;
   backButtonHref: string;
   showSocial?: boolean;
-  socialText: string
+  socialText?: string
 };
 
 export const CardWrapper = ({
@@ -32,14 +32,14 @@ export const CardWrapper = ({
   return (
     <Card className="w-[400px] border-none shadow-none">
       <CardHeader>
-        <Header headerText={headerText} label={headerLabel} />
+        {headerText && <Header headerText={headerText} label={headerLabel} />}
       </CardHeader>
       <CardContent>
         {children}
       </CardContent>
       {showSocial && (
         <CardFooter className="flex justify-center">
-          <Social socialText={socialText} />
+         { socialText && <Social socialText={socialText} />}
         </CardFooter>
       )}
       <CardFooter>

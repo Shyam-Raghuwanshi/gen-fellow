@@ -14,7 +14,7 @@ export const settings = async( values : z.infer<typeof SettingsSchema>) => {
         return { error: "Unauthorized" }
     }
 
-    const user = await getUserById(session.user.id);
+    const user = await getUserById(session.user.id!);
     if(!user){
         return { error: "Unauthorized" }
     }

@@ -13,7 +13,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,  
+  FormMessage,
 } from "@/components/ui/form";
 import { CardWrapper } from "@/components/auth/card-wrapper"
 import { Button } from "@/components/ui/button";
@@ -43,7 +43,7 @@ export const NewPasswordForm = () => {
     setError("");
     setSuccess("");
     console.log(values);
-    
+
     startTransition(() => {
       newPassword(values, token)
         .then((data) => {
@@ -60,7 +60,7 @@ export const NewPasswordForm = () => {
       backButtonHref="/auth/login"
     >
       <Form {...form}>
-        <form 
+        <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-6"
         >
@@ -81,7 +81,7 @@ export const NewPasswordForm = () => {
                   </FormControl>
                   <FormMessage />
                 </FormItem>
-                )}
+              )}
             />
           </div>
           <FormError message={error} />
